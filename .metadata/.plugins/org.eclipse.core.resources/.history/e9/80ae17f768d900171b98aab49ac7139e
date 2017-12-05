@@ -1,0 +1,30 @@
+package sentenceCapitalizer;
+
+import java.util.Scanner;
+
+public class SentenceCapitalizer {
+
+	public static void main(String[] args) {
+		String str;
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter the string to modify:");
+		str = kb.nextLine();
+		System.out.println("Modified string is: " + sentCap(str));
+		
+		kb.close();
+		System.exit(0);
+
+	}
+	public static String sentCap(String s){
+		String str = "";
+		String[] sent;
+		sent = s.split(".");
+		for(int i = 0; i < sent.length; i++){
+			sent[i].trim();
+			Character.toUpperCase(sent[i].charAt(0));
+			str += " " + sent[i];
+		}
+		return str;
+	}
+
+}

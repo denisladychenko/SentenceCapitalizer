@@ -1,0 +1,39 @@
+package sentenceCapitalizer;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class SentenceCapitalizer {
+
+	public static void main(String[] args) {
+		String str;
+		
+		
+		str = JOptionPane.showInputDialog("Enter the string to modify:");
+		System.out.println(str);
+		System.out.println("Modified string is: " + sentCap(str));
+		
+		
+		System.exit(0);
+
+	}
+	public static String sentCap(String s){
+		String str = "";
+		String[] sent = s.split(".");
+		;
+		System.out.println(sent.length);
+		for(int i = 0; i < sent.length; i++){
+			
+			System.out.println(sent[i]);
+		}
+		
+		for(int i = 0; i < sent.length; i++){
+			sent[i].trim();
+			Character.toUpperCase(sent[i].charAt(0));
+			str += " " + sent[i];
+		}
+		return str;
+	}
+
+}
